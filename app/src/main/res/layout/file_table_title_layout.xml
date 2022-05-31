@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@color/gray_90"
+    android:theme="@android:style/ThemeOverlay.Material.Light"
+    android:id="@+id/fileContent"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="48dp">
+
+    <LinearLayout
+        android:layout_gravity="center_vertical"
+        android:background="?selectableItemBackground"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:textSize="14sp"
+            android:id="@+id/no"
+            style="@style/data_table_text_style"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:minWidth="60dp"
+            android:text="序号"/>
+
+        <TextView
+            android:ellipsize="end"
+            android:textSize="14sp"
+            android:id="@+id/projectName"
+            style="@style/data_table_text_style"
+            android:layout_weight="2"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:minWidth="160dp"
+            android:text="工程名称"/>
+
+        <TextView
+            android:textSize="14sp"
+            android:id="@+id/pileNo"
+            style="@style/data_table_text_style"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:minWidth="80dp"
+            android:text="编号"/>
+
+        <TextView
+            android:textSize="14sp"
+            android:id="@+id/serialNo"
+            style="@style/data_table_text_style"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:minWidth="140dp"
+            android:text="流水号"/>
+
+        <TextView
+            android:textSize="14sp"
+            android:id="@+id/startTime"
+            style="@style/data_table_text_style"
+            android:layout_weight="1.5"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:minWidth="120dp"
+            android:text="开始时间"/>
+
+        <TextView
+            android:textSize="14sp"
+            android:id="@+id/endTime"
+            style="@style/data_table_text_style"
+            android:layout_weight="1.5"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:minWidth="120dp"
+            android:text="结束时间"/>
+
+        <TextView
+            android:textSize="14sp"
+            android:id="@+id/recordTime"
+            style="@style/data_table_text_style"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:minWidth="60dp"
+            android:text="记录数"/>
+
+    </LinearLayout>
+</LinearLayout>

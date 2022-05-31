@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+    android:gravity="center"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:checkedButton="@id/last30"
+    android:padding="10dp"
+    android:layout_height="match_parent">
+
+    <RadioGroup
+        android:id="@+id/lastGroup"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <RadioButton
+            android:id="@+id/last30"
+            android:text="最近30条"
+            style="@style/search_layout_style" />
+        <RadioButton
+            android:id="@+id/last60"
+            android:text="最近60条"
+            style="@style/search_layout_style" />
+        <RadioButton
+            android:id="@+id/last100"
+            android:text="最近100条"
+            style="@style/search_layout_style" />
+
+    </RadioGroup>
+</RadioGroup>

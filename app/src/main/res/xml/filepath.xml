@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <paths>
+        <external-path path="download" name="update"/>
+        <external-path path ="APM" name = "zip"/>
+        <external-path path ="APM" name = "pdf"/>
+        <root-path name="name" path="" />
+    </paths>
+</resources>

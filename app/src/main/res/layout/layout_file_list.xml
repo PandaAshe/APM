@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:keepScreenOn="true"
+    android:orientation="vertical"
+    android:background="@color/main_color"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:background="@color/white"
+        android:paddingHorizontal="16dp"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="48dp">
+
+        <TextView
+            android:foreground="?selectableItemBackground"
+            android:id="@+id/navigationTv"
+            android:textSize="18sp"
+            android:gravity="center"
+            android:drawableStart="@drawable/ic_baseline_navigate_before_24"
+            android:layout_gravity="center_vertical"
+            android:layout_width="wrap_content"
+            android:text="返回"
+            android:textColor="@color/purple_700"
+            android:layout_height="match_parent"/>
+
+        <TextView
+            android:foreground="?selectableItemBackground"
+            android:id="@+id/onChangeOriginClick"
+            android:gravity="center"
+            android:drawableEnd="@drawable/ic_baseline_keyboard_arrow_down_24"
+            android:textColor="@color/purple_700"
+            android:textSize="20sp"
+            android:layout_centerInParent="true"
+            android:text="文件管理"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent" />
+
+        <LinearLayout
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+
+            <ImageButton
+                android:foreground="?selectableItemBackground"
+                android:visibility="gone"
+                android:id="@+id/unDoIcon"
+                android:layout_marginHorizontal="16dp"
+                android:layout_gravity="center_vertical"
+                android:background="@drawable/ic_baseline_undo_24"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:contentDescription="@string/app_name" />
+
+
+            <ImageButton
+                android:foreground="?selectableItemBackground"
+                android:layout_marginHorizontal="16dp"
+                android:id="@+id/onDeleteClick"
+                android:layout_gravity="center_vertical"
+                android:background="@drawable/ic_baseline_delete_24"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:contentDescription="@string/app_name" />
+
+            <ImageButton
+                android:foreground="?selectableItemBackground"
+                android:id="@+id/shareIcon"
+                android:layout_marginHorizontal="16dp"
+                android:layout_gravity="center_vertical"
+                android:background="@drawable/ic_baseline_share_24"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:contentDescription="@string/app_name" />
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <include layout="@layout/horizontal_divider"/>
+
+    <LinearLayout
+        android:background="@color/white"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RadioGroup
+            android:visibility="gone"
+            android:layout_gravity="center"
+            android:checkedButton="@id/lastData"
+            android:id="@+id/search_Group"
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <RadioButton
+                android:id="@+id/lastData"
+                android:text="最近测试数据"
+                android:drawableStart="@drawable/last_svg"
+                style="@style/RadioButton_Style" />
+
+            <RadioButton
+                android:id="@+id/time"
+                android:text="时间查询"
+                android:drawableStart="@drawable/time_svg"
+                style="@style/RadioButton_Style" />
+            <RadioButton
+                android:id="@+id/projectName"
+                android:text="工程名称查询"
+                android:drawableStart="@drawable/name_svg"
+                style="@style/RadioButton_Style" />
+
+            <RadioButton
+                android:visibility="gone"
+                android:id="@+id/num"
+                android:text="流水号查询"
+                android:drawableStart="@drawable/ic_serial_no"
+                style="@style/RadioButton_Style" />
+
+            <RadioButton
+                android:id="@+id/pileNo"
+                android:text="桩号查询"
+                android:drawableStart="@drawable/num_svg"
+                style="@style/RadioButton_Style" />
+
+        </RadioGroup>
+
+        <include layout="@layout/horizontal_divider"/>
+
+        <LinearLayout
+            android:padding="5dp"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <RelativeLayout
+                android:id="@+id/search_layout"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="62dp">
+
+                <CheckBox
+                    android:layout_centerVertical="true"
+                    android:visibility="gone"
+                    android:id="@+id/allPickCheckBox"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_gravity="center_vertical"
+                    android:text="全选"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <include
+                    android:layout_centerInParent="true"
+                    android:id="@+id/search_last_layout"
+                    android:visibility="visible"
+                    android:layout_gravity="center_horizontal"
+                    layout="@layout/search_last_layout"
+                    android:layout_height="match_parent"
+                    android:layout_width="wrap_content"/>
+
+                <include
+                    android:layout_centerInParent="true"
+                    android:visibility="gone"
+                    android:id="@+id/search_time_layout"
+                    android:layout_gravity="center_horizontal"
+                    layout="@layout/search_time_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+
+                <include
+                    android:layout_centerInParent="true"
+                    android:visibility="gone"
+                    android:id="@+id/search_name_layout"
+                    android:layout_gravity="center_horizontal"
+                    layout="@layout/search_name_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+
+                <TextView
+                    android:foreground="?selectableItemBackground"
+                    android:layout_centerVertical="true"
+                    android:textSize="16sp"
+                    android:layout_alignParentEnd="true"
+                    android:visibility="gone"
+                    android:id="@+id/cancelPickTv"
+                    android:layout_marginStart="20dp"
+                    android:gravity="center"
+                    android:padding="8dp"
+                    android:focusable="true"
+                    android:clickable="true"
+                    android:textColor="@color/purple_700"
+                    android:layout_marginEnd="20dp"
+                    android:text="@string/cancel"
+                    android:layout_gravity="center_vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"/>
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:id="@+id/tableLayout"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:background="@color/main_color"
+                android:elevation="2dp"
+                android:orientation="vertical"
+                android:paddingBottom="10.5dp"
+                android:paddingLeft="8.5dp"
+                android:paddingRight="8.5dp"
+                android:paddingTop="6.5dp">
+
+                <HorizontalScrollView
+                    android:fadingEdge="none"
+                    android:overScrollMode="never"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent">
+                        <include
+                            android:id="@+id/titleLayout"
+                            android:layout_height="48dp"
+                            android:layout_width="wrap_content"
+                            layout="@layout/file_table_title_layout" />
+
+                        <com.jiace.apm.widget.RefreshListView
+                            android:layout_weight="1"
+                            android:fadingEdge="none"
+                            android:overScrollMode="never"
+                            android:id="@+id/fileListView"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"/>
+                    </LinearLayout>
+                </HorizontalScrollView>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

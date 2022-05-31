@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="CardViewStyle">
+        <attr name="showUnit">
+            <enum name="show" value="1"/>
+            <enum name="gone" value="0"/>
+        </attr>
+
+        <attr name="gravity">
+            <enum name="center" value="0"/>
+            <enum name="start" value="1"/>
+            <enum name="end" value="2"/>
+        </attr>
+
+        <attr name="title" format="string"/>
+
+        <attr name="text" format="string" localization="suggested" />
+
+        <attr name="color" format="color"/>
+
+    </declare-styleable>
+
+    <declare-styleable name="SensorManagerView">
+        <attr name="type">
+            <enum name="SampleMachine" value="0"/>
+            <enum name="TorsionSensor" value="1"/>
+            <enum name="AngleOfDipSensor" value="2"/>
+            <enum name="Displacement" value="3"/>
+            <enum name="Bluetooth" value="4" />
+        </attr>
+    </declare-styleable>
+
+    <declare-styleable name="CellTextViewStyle">
+        <attr name="deviceNo" format="string"/>
+        <attr name="textColor" format="color"/>
+        <attr name="textSize" format="float"/>
+    </declare-styleable>
+
+    <declare-styleable name="CurveView">
+        <attr name="curve_type">
+            <enum name="depth" value="0"/>
+            <enum name="torsion" value="1"/>
+            <enum name="footage" value="2"/>
+            <enum name="angle" value="3"/>
+        </attr>
+
+        <attr name="isDrawXAxis" format="boolean"/>
+
+        <attr name="isDrawLimitLine" format="boolean" />
+
+    </declare-styleable>
+
+
+</resources>

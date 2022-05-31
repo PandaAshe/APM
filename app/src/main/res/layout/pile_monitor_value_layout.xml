@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <import type="com.jiace.apm.ui.main.MonitorParam"/>
+        <import type="com.jiace.apm.until.UntilsKt"/>
+        <import type="com.jiace.apm.R"/>
+
+        <variable
+            name="mp"
+            type="MonitorParam" />
+    </data>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:background="@drawable/area_background"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.jiace.apm.widget.CardView
+            app:color = "@color/main_value_color"
+            android:text = "@{String.format(UntilsKt.getString(R.string.int_text),mp.turns)}"
+            app:title = "@string/realtime_turns"
+            style="@style/card_view_style" />
+
+        <com.jiace.apm.widget.CardView
+            app:color = "@color/main_value_color"
+            android:text = "@{mp.buildTime}"
+            app:title = "@string/monitor_time"
+            style="@style/card_view_style" />
+
+        <com.jiace.apm.widget.CardView
+            app:color = "@color/teal_200"
+            android:text = "@{String.format(UntilsKt.getString(R.string.int_text),mp.designDepth)}"
+            app:title = "@string/param_design_depth"
+            style="@style/card_view_style" />
+
+        <com.jiace.apm.widget.CardView
+            app:color = "@android:color/holo_orange_light"
+            android:text = "@{String.format(UntilsKt.getString(R.string.float_text),mp.designAngle)}"
+            app:title = "@string/param_design_angle"
+            style="@style/card_view_style" />
+
+        <!--<com.jiace.apm.widget.CardView
+            app:color = "@color/main_value_color"
+            android:text = "@{String.format(UntilsKt.getString(R.string.float_text),mp.designDirection)}"
+            app:title = "@string/param_design_direction"
+            style="@style/card_view_style" />-->
+
+
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</layout>

@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:jiace="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/main_color">
+
+    <LinearLayout
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="0dp">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/main_padding"/>
+
+        <com.jiace.apm.widget.CurveView
+            android:id="@+id/torsionView"
+            jiace:isDrawXAxis = "true"
+            jiace:curve_type ="torsion"
+            jiace:isDrawLimitLine="false"
+            android:layout_width="match_parent"
+            android:layout_weight="1"
+            android:layout_height="0dp"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/main_padding"/>
+
+        <com.jiace.apm.widget.CurveView
+            android:id="@+id/footageView"
+            jiace:isDrawXAxis = "true"
+            jiace:curve_type ="footage"
+            jiace:isDrawLimitLine="false"
+            android:layout_width="match_parent"
+            android:layout_weight="1"
+            android:layout_height="0dp"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/main_padding"/>
+
+        <com.jiace.apm.widget.CurveView
+            android:id="@+id/angleView"
+            jiace:isDrawXAxis = "true"
+            jiace:curve_type ="angle"
+            jiace:isDrawLimitLine="false"
+            android:layout_width="match_parent"
+            android:layout_weight="1"
+            android:layout_height="0dp"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/main_padding"/>
+
+        <com.jiace.apm.widget.CurveView
+            android:id="@+id/depthView"
+            jiace:isDrawXAxis = "true"
+            jiace:curve_type ="depth"
+            jiace:isDrawLimitLine="false"
+            android:layout_width="match_parent"
+            android:layout_weight="1"
+            android:layout_height="0dp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_marginVertical="10dp"
+        android:layout_gravity="center"
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <ImageButton
+            android:id="@+id/fastForwardButton"
+            android:src="@drawable/ic_baseline_fast_rewind_24"
+            android:layout_marginHorizontal="10dp"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:contentDescription="@string/app_name" />
+
+        <ImageButton
+            android:id="@+id/playOrPauseButton"
+            android:src="@drawable/ic_baseline_play_arrow_24"
+            android:layout_marginHorizontal="10dp"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:contentDescription="@string/app_name" />
+
+        <ImageButton
+            android:id="@+id/fastRewindButton"
+            android:src="@drawable/ic_baseline_fast_forward_24"
+            android:layout_marginHorizontal="10dp"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:contentDescription="@string/app_name" />
+    </LinearLayout>
+
+</LinearLayout>

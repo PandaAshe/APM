@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/summaryContentView"
+    android:orientation="horizontal"
+    android:layout_height="48dp"
+    android:layout_width="wrap_content">
+
+    <include layout="@layout/vertical_divider"/>
+
+    <TextView
+        android:id="@+id/no"
+        android:layout_weight="1"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:minWidth="60dp"
+        style="@style/data_table_text_style"
+        android:text="@string/No" />
+
+    <include layout="@layout/vertical_divider"/>
+
+    <TextView
+        android:padding="2dp"
+        android:layout_weight="1"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:minWidth="80dp"
+        android:id="@+id/depth"
+        style="@style/data_table_text_style"
+        android:text="@string/preset_loading" />
+
+    <include layout="@layout/vertical_divider"/>
+
+    <TextView
+        android:padding="2dp"
+        android:id="@+id/torsion"
+        android:layout_weight="1"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:minWidth="80dp"
+        style="@style/data_table_text_style"
+        android:text="@string/Grade_Time" />
+
+    <include layout="@layout/vertical_divider"/>
+
+    <TextView
+        android:padding="2dp"
+        android:id="@+id/angle"
+        android:layout_weight="1"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:minWidth="60dp"
+        style="@style/data_table_text_style"
+        android:text="@string/End_Time" />
+
+    <include layout="@layout/vertical_divider"/>
+
+    <TextView
+        android:padding="2dp"
+        android:id="@+id/footage"
+        android:layout_weight="1"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:minWidth="60dp"
+        style="@style/data_table_text_style"
+        android:text="@string/Grade_S" />
+
+    <include layout="@layout/vertical_divider"/>
+
+    <include layout="@layout/vertical_divider"/>
+
+</LinearLayout>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="62dp">
+    <Button
+        android:textSize="18sp"
+        android:id = "@+id/cancel"
+        android:text="@string/cancel"
+        android:layout_weight="1"
+        android:layout_width="60dp"
+        android:layout_height="match_parent"
+        style="?android:attr/buttonBarButtonStyle" />
+
+    <include
+      android:id="@+id/divider"
+      layout="@layout/vertical_divider"/>
+
+    <Button
+        style="?android:attr/buttonBarButtonStyle"
+        android:textSize="18sp"
+        android:id = "@+id/oK"
+        android:text="@string/ok"
+        android:textColor="@color/purple_700"
+        android:layout_weight="1"
+        android:layout_width="60dp"
+        android:layout_height="match_parent" />
+</LinearLayout>

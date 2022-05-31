@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <import type="com.jiace.apm.ui.main.ProjectInfo"/>
+        <import type="com.jiace.apm.until.UntilsKt"/>
+        <import type="com.jiace.apm.R"/>
+
+        <variable
+            name="pi"
+            type="ProjectInfo" />
+
+    </data>
+
+    <LinearLayout
+        android:padding="8dp"
+        android:background="@drawable/area_background"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+
+            style="@style/content_style">
+            <TextView
+                android:textColor="@color/white"
+                android:text="@string/project_info"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:maxLines="1"
+                android:ems="8"
+                android:ellipsize="middle"
+                android:text="@{pi.projectName}"
+                tools:text = "武汉嘉测科技有限公司"
+                style="@style/project_info_text_style" />
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/content_style">
+            <TextView
+                android:textColor="@color/white"
+                android:text="@string/param_pile_no"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:text="@{pi.pileNo}"
+                tools:text = "1-8#"
+                style="@style/project_info_text_style" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            style="@style/content_style">
+            <TextView
+                android:id="@+id/countDownTitle"
+                android:textColor="@color/white"
+                android:text="@{pi.getCountDownTitle()}"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                tools:text = "TW002"
+                android:text="@{pi.tallNo}"
+                style="@style/project_info_text_style" />
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/content_style">
+            <TextView
+                android:textColor="@color/white"
+                android:text="@string/design_depth"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                tools:text = "36.5"
+                android:text="@{ pi.designDepth == 0 ? UntilsKt.getString(R.string.empty_text) : String.format(UntilsKt.getString(R.string.int_text),pi.designDepth)}"
+                style="@style/project_info_text_style" />
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+</layout>

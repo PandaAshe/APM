@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:background="@drawable/yellow_background"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/textToast"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/gray_05"
+        android:textSize="24sp"
+        android:layout_gravity="center"
+        android:paddingStart="30dp"
+        android:paddingEnd="30dp"
+        android:paddingBottom="16dp"
+        android:paddingTop="16dp"/>
+
+</LinearLayout>

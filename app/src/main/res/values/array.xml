@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <array name="setting_names">
+        <item>工程信息</item>
+        <item>施工参数</item>
+        <item>监测配置</item>
+        <item>传感器配置</item>
+        <item>设备管理</item>
+    </array>
+
+
+    <array name="file_preview_titles">
+        <item>基本信息</item>
+        <item>汇总表</item>
+        <item>汇总曲线</item>
+        <item>监测过程曲线</item>
+    </array>
+
+</resources>

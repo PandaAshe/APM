@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:binding="http://schemas.android.com/apk/res-auto"
+    xmlns:jiace="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <import type="com.jiace.apm.ui.main.MainViewModel"/>
+        <import type="com.jiace.apm.databinding.ObservableKeyedArrayList"/>
+        <import type="com.jiace.apm.until.UntilsKt"/>
+        <import type="com.jiace.apm.R"/>
+
+        <variable
+            name="mainVM"
+            type="MainViewModel" />
+
+
+    </data>
+
+    <LinearLayout
+        android:padding="@dimen/main_padding"
+        android:keepScreenOn="true"
+        android:background="@color/background_color"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:paddingBottom="10dp"
+            android:background="@drawable/area_background"
+            android:layout_weight="6"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_marginTop="16dp"
+                android:layout_marginStart="24dp"
+                android:textSize="24sp"
+                android:textColor="@color/white"
+                android:text="@string/curve_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="16dp"/>
+
+            <com.jiace.apm.widget.CurveView
+                android:updateRecord = "@{mainVM.MMonitorParam}"
+                android:layout_width="match_parent"
+                jiace:isDrawXAxis = "true"
+                jiace:curve_type ="torsion"
+                android:layout_weight="1"
+                android:layout_height="0dp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/main_padding"/>
+
+            <com.jiace.apm.widget.CurveView
+                android:updateRecord = "@{mainVM.MMonitorParam}"
+                android:layout_width="match_parent"
+                jiace:isDrawXAxis = "true"
+                jiace:curve_type ="footage"
+                android:layout_weight="1"
+                android:layout_height="0dp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/main_padding"/>
+
+            <com.jiace.apm.widget.CurveView
+                android:updateRecord = "@{mainVM.MMonitorParam}"
+                android:layout_width="match_parent"
+                jiace:isDrawXAxis = "true"
+                jiace:curve_type ="angle"
+                android:layout_weight="1"
+                android:layout_height="0dp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/main_padding"/>
+
+            <com.jiace.apm.widget.CurveView
+                android:updateRecord = "@{mainVM.MMonitorParam}"
+                android:layout_width="match_parent"
+                jiace:isDrawXAxis = "true"
+                android:layout_weight="1"
+                android:layout_height="0dp" />
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/main_padding"/>
+
+        <include
+            android:layout_weight="1"
+            layout="@layout/pile_monitor_value_layout"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            binding:mp = "@{mainVM.MMonitorParam}" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/main_padding"/>
+
+        <LinearLayout
+
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="64dp">
+
+            <TextView
+                android:background="@drawable/area_background"
+                android:layout_gravity="center_vertical"
+                android:padding="12dp"
+                android:gravity="center_vertical"
+                android:layout_weight="3"
+                android:layout_width="0dp"
+                android:textSize="18sp"
+                android:singleLine="true"
+                android:text="@{mainVM.MMonitorParam.messageText}"
+                android:textColor="@{mainVM.MMonitorParam.isErrorMessage() ? @color/red_color : @color/white}"
+                android:layout_height="match_parent"/>
+
+            <View
+                android:layout_width="@dimen/main_padding"
+                android:layout_height="match_parent"/>
+
+            <LinearLayout
+                android:padding="8dp"
+                android:background="@drawable/area_background"
+                android:layout_weight="2"
+                android:layout_width="0dp"
+                android:orientation="horizontal"
+                android:layout_height="match_parent">
+
+                <ImageButton
+                    android:id="@+id/menuButton"
+                    android:background="?selectableItemBackground"
+                    android:src="@drawable/ic_baseline_menu_24"
+                    android:layout_weight="1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:contentDescription="@string/app_name"
+                    android:onClick="@{ () -> mainVM.onMenuClick(menuButton)}" />
+
+                <ImageButton
+                    android:background="?selectableItemBackground"
+                    android:src="@drawable/ic_baseline_settings_24"
+                    android:layout_weight="1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:contentDescription="@string/app_name"
+                    android:onClick="@{() ->  mainVM.onSettingClick(menuButton)}"  />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+    <!--<androidx.appcompat.widget.LinearLayoutCompat
+        android:padding="@dimen/main_padding"
+        android:keepScreenOn="true"
+        android:background="@color/background_color"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_weight="3.5"
+            android:orientation="vertical"
+            android:layout_width="0dp"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:paddingBottom="10dp"
+                    android:background="@drawable/area_background"
+                    android:layout_weight="4.5"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_marginTop="16dp"
+                        android:layout_marginStart="24dp"
+                        android:textSize="24sp"
+                        android:textColor="@color/white"
+                        android:text="@string/curve_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/main_padding"/>
+
+                    <com.jiace.apm.widget.CurveView
+                        android:updateRecord = "@{mainVM.MMonitorParam}"
+                        android:layout_width="match_parent"
+                        jiace:isDrawXAxis = "true"
+                        jiace:curve_type ="footage"
+                        android:layout_height="160dp" />
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/main_padding"/>
+
+                <include
+                    layout="@layout/pile_monitor_value_layout"
+                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    binding:mp = "@{mainVM.MMonitorParam}" />
+
+            </LinearLayout>
+
+
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <View
+            android:layout_width="@dimen/main_padding"
+            android:layout_height="match_parent"/>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent">
+
+                <com.jiace.apm.widget.AngleView
+                    android:layout_weight="1"
+                    android:background="@drawable/area_background"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"/>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/main_padding"/>
+
+                <include
+                    binding:pi = "@{mainVM.MProjectInfo}"
+                    layout="@layout/project_info_layout"
+                    android:layout_weight="1.5"
+                    android:background="@drawable/area_background"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/main_padding"/>
+
+                <LinearLayout
+                    android:padding="8dp"
+                    android:background="@drawable/area_background"
+                    android:layout_width="match_parent"
+                    android:orientation="horizontal"
+                    android:layout_height="48dp">
+
+                    <ImageButton
+                        android:id="@+id/menuButton"
+                        android:background="?selectableItemBackground"
+                        android:src="@drawable/ic_baseline_menu_24"
+                        android:layout_weight="1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:contentDescription="@string/app_name"
+                        android:onClick="@{ () -> mainVM.onMenuClick(menuButton)}" />
+
+                    <ImageButton
+                        android:background="?selectableItemBackground"
+                        android:src="@drawable/ic_baseline_settings_24"
+                        android:layout_weight="1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:contentDescription="@string/app_name"
+                        android:onClick="@{() ->  mainVM.onSettingClick(menuButton)}"  />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>-->
+</layout>

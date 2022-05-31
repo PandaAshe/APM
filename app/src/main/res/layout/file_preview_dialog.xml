@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:keepScreenOn="true"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/contentPanelView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/main_color"
+    android:orientation="vertical"
+    android:transitionName="shareElement">
+
+    <RelativeLayout
+        android:paddingHorizontal="8dp"
+        android:layout_width="match_parent"
+        android:layout_weight="1"
+        android:layout_height="0dp">
+        <LinearLayout
+            android:gravity="center"
+            android:id="@+id/processLayout"
+            android:visibility="visible"
+            android:layout_centerInParent="true"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ProgressBar
+                android:layout_gravity="center_horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:textSize="16sp"
+                android:layout_marginTop="10dp"
+                android:layout_gravity="center_horizontal"
+                android:text="@string/loading"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+
+        <TextView
+            android:gravity="center"
+            android:focusable="true"
+            android:clickable="true"
+            android:visibility="gone"
+            android:layout_centerInParent="true"
+            android:textSize="16sp"
+            android:id="@+id/errorText"
+            android:layout_gravity="center_horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+        <LinearLayout
+            android:id="@+id/contentLayout"
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <com.google.android.material.tabs.TabLayout
+                android:id="@+id/tabLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:transitionName="shareElement1"
+                app:tabBackground="@color/main_color"
+                app:tabMode="fixed"
+                app:tabSelectedTextColor="@color/purple_700"
+                app:tabTextAppearance="@android:style/TextAppearance.Widget.TabWidget"
+                app:tabTextColor = "@color/black" />
+
+            <include layout="@layout/horizontal_divider" />
+
+            <androidx.viewpager.widget.ViewPager
+                android:id="@+id/curveTableViewPager"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_weight="1"
+                android:transitionName="shareElement2" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <include layout="@layout/horizontal_divider"/>
+
+    <include layout="@layout/dialog_single_button_layout"/>
+
+</LinearLayout>

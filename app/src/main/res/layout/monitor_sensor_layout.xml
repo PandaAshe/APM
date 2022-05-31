@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:background="@color/white"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_marginVertical="8dp"
+        android:textSize="24sp"
+        android:layout_gravity="center_horizontal"
+        android:textColor="@android:color/black"
+        android:text="@string/monitor_sensor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <include layout="@layout/horizontal_divider"/>
+
+
+    <TextView
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:id="@+id/loadTableTitle"
+        android:text="扭矩传感器"
+        style="@style/title_text_style"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <TableLayout
+        android:padding="10dp"
+        android:id="@+id/tabLayout"
+        android:layout_marginBottom="10dp"
+        style="@style/table_layout_style">
+
+        <TableRow
+            style="@style/table_row_style"
+            android:background="@color/gray_80">
+
+            <TextView
+                style="@style/table_text_style"
+                android:text="@string/No_Title" />
+
+            <TextView
+                style="@style/table_text_style"
+                android:text="@string/bluetooth" />
+
+            <TextView
+                style="@style/table_text_style"
+                android:text="@string/torsion_voltage" />
+
+            <TextView
+                style="@style/table_text_style"
+                android:text="@string/realtime_torsion" />
+
+            <TextView
+                style="@style/table_text_style"
+                android:text="@string/rssi" />
+
+            <TextView
+                style="@style/table_text_style"
+                android:text="@string/battery" />
+        </TableRow>
+
+        <TableRow
+            style="@style/table_row_style"
+            android:background="@color/white"
+            android:layout_height="64dp">
+
+            <TextView
+                android:id="@+id/torsionNo"
+                style="@style/table_text_style" />
+
+            <TextView
+                android:id="@+id/bluetoothNo"
+                style="@style/table_text_style" />
+
+            <TextView
+                android:id="@+id/voltageValue"
+                style="@style/table_text_style" />
+
+            <TextView
+                android:id="@+id/torsionValue"
+                style="@style/table_text_style" />
+
+            <TextView
+                android:id="@+id/rssiValue"
+                style="@style/table_text_style" />
+
+            <TextView
+                android:id="@+id/batteryValue"
+                style="@style/table_text_style" />
+        </TableRow>
+
+    </TableLayout>
+
+    <TextView
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:text="@string/angle_sensor"
+        style="@style/title_text_style"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <TableLayout
+        android:padding="10dp"
+        android:layout_marginBottom="10dp"
+        style="@style/table_layout_style">
+
+        <TableRow
+            style="@style/table_row_style"
+            android:background="@color/gray_80">
+
+            <TextView
+                style="@style/table_text_style"
+                android:text="编号"  />
+
+            <TextView
+                style="@style/table_text_style"
+                android:text="X轴(°)" />
+
+            <TextView
+                style="@style/table_text_style"
+                android:text="Y轴(°)" />
+
+            <TextView
+                style="@style/table_text_style"
+                android:text="Z轴(°)" />
+        </TableRow>
+
+
+        <TableRow
+            style="@style/table_row_style"
+            android:background="@color/white"
+            android:layout_height="64dp">
+
+            <TextView
+                android:id="@+id/angleNo"
+                style="@style/table_text_style" />
+
+            <TextView
+                android:text="@string/angle_default_value"
+                android:id="@+id/angleX"
+                style="@style/table_text_style" />
+
+            <TextView
+                android:text="@string/angle_default_value"
+                android:id="@+id/angleY"
+                style="@style/table_text_style" />
+
+            <TextView
+                android:id="@+id/angleZ"
+                style="@style/table_text_style" />
+
+        </TableRow>
+
+    </TableLayout>
+
+    <TextView
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:text="@string/displacement_sensor"
+        style="@style/title_text_style"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <TableLayout
+        android:padding="10dp"
+        android:layout_marginBottom="20dp"
+        style="@style/table_layout_style">
+
+        <TableRow
+            style="@style/table_row_style"
+            android:background="@color/gray_80">
+
+            <TextView
+                style="@style/table_text_style"
+                android:text="编号" />
+
+            <TextView
+                style="@style/table_text_style"
+                android:text="位移(cm)" />
+
+        </TableRow>
+
+
+        <TableRow
+            style="@style/table_row_style"
+            android:background="@color/white"
+            android:layout_height="64dp">
+
+            <TextView
+                android:id="@+id/displacementNo"
+                style="@style/table_text_style" />
+
+            <TextView
+                android:id="@+id/displacementValue"
+                style="@style/table_text_style" />
+
+        </TableRow>
+
+    </TableLayout>
+
+    <include layout="@layout/horizontal_divider"/>
+
+    <include layout="@layout/dialog_single_button_layout"/>
+
+</LinearLayout>

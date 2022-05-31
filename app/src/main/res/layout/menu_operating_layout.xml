@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:background="@color/gray_90"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:paddingVertical="10dp"
+        android:gravity="center"
+        android:id="@+id/menuText"
+        android:clickable="true"
+        android:focusable="true"
+        android:textSize="20sp"
+        android:layout_gravity="center_vertical"
+        android:textColor="@android:color/black"
+        android:text="@string/menu_operating"
+        android:layout_width="match_parent"
+        android:layout_height="56dp" />
+
+    <include layout="@layout/horizontal_divider"/>
+
+    <GridView
+        android:paddingVertical="2dp"
+        android:paddingHorizontal="10dp"
+        android:layout_marginVertical="20dp"
+        android:horizontalSpacing="10dp"
+        android:verticalSpacing="40dp"
+        android:numColumns="3"
+        android:stretchMode="columnWidth"
+        android:id="@+id/operatingView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    </GridView>
+
+</LinearLayout>

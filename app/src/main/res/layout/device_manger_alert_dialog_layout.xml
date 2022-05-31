@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:background="@color/main_color"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:padding="6dp"
+        android:id="@+id/title"
+        android:textSize="20sp"
+        android:layout_marginVertical="8dp"
+        android:layout_gravity="center_horizontal"
+        android:textColor="@color/black"
+        android:text="@string/tips"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/gray_60"/>
+
+    <LinearLayout
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        style="@style/plus_ll_style">
+
+        <TextView
+            android:text="编号"
+            style="@style/plus_text_title_style" />
+
+        <Space
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"/>
+
+        <EditText
+            android:id="@+id/deviceNum"
+            android:inputType="text"
+            style="@style/plus_edit_style" />
+
+    </LinearLayout>
+
+    <LinearLayout style="@style/plus_ll_style">
+
+        <TextView
+            android:id="@+id/fullScallTitle"
+            android:text="量程(mm)"
+            style="@style/plus_text_title_style" />
+
+        <Space
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"/>
+
+        <EditText
+            android:id="@+id/fullScall"
+            android:inputType="number"
+            style="@style/plus_edit_style" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/otherDeviceParamLayout"
+        style="@style/plus_ll_style">
+
+        <TextView
+            android:id="@+id/loadingRatioTitle"
+            android:text="灵敏度(mV/V)"
+            style="@style/plus_text_title_style" />
+
+        <Space
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"/>
+
+        <EditText
+            android:id="@+id/loadingRatio"
+            android:inputType="numberDecimal"
+            style="@style/plus_edit_style" />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:visibility="gone"
+        android:id="@+id/sensorAndRouterLayout"
+        style="@style/plus_ll_style">
+
+        <TextView
+            android:text="是否数传一体"
+            style="@style/plus_text_title_style" />
+
+        <CheckBox
+            android:id="@+id/sensorAndRouterCheck"
+            android:gravity="center"
+            android:padding="12dp"
+            android:checked="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+
+    <View
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/gray_60"/>
+
+    <include layout="@layout/dialog_button_layout"/>
+
+</LinearLayout>
